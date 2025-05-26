@@ -15,15 +15,13 @@ gameDisplay = display.set_mode(SCREEN_SIZE)
 # background - color of the sky
 gameDisplay.fill(Color('lightblue'))
 
-# draw a house with a roof
+# draw a house with a roof:  Rect(left, top, width, height)
+# left, top - location of upper left corner
 draw.rect(gameDisplay, Color('brown'), Rect(100, 200, 300, 200))
+
+# draw.polygon(Surface, Color(name), [pointList])
+# Draws a polygon with vertices specified in pointList, on the Surface provided
 draw.polygon(gameDisplay, Color('black'), [(100, 200), (400, 200), (250, 50)])
-
-# draw green grass
-draw.rect(gameDisplay, Color('green'), Rect(0, 400, 500, 100))
-
-# draw a sun
-draw.circle(gameDisplay, Color('yellow'), (50, 50), 50)
 
 # show the graphics on the screen
 display.flip()
