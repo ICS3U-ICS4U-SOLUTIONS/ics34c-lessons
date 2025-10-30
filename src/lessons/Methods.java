@@ -1,17 +1,12 @@
 package lessons;
 
 public class Methods {
-
-	
 	
 	public static void main(String[] args) {
 
 		System.out.println(boatyMcBoatFace(13, 7));
-		
 		System.out.println(boatyMcBoatFace(13.2, 7.3));
-		
 		nothingReturned("Mr. Wong");
-		
 	}
 	
 	
@@ -41,7 +36,6 @@ public class Methods {
 			return b;
 	}
 	
-	
 	// DESCRIPTION - Concatenates "Hello " with String parameter
 	//				 and is displayed to console.
 	// PARAMETERS - String s
@@ -50,11 +44,5 @@ public class Methods {
 		
 		System.out.println("Hello " + s);
 	}
-	
-	
-	
-	
-	
-	
 
 }
