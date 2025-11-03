@@ -11,7 +11,7 @@ public class MethodExample {
 		System.out.println(Math.max(1, 2));
 		
 		// keep answer
-		int answer = Math.max(1, 2);
+		answer = Math.max(1, 2);
 		
 		System.out.println(answer);
 
