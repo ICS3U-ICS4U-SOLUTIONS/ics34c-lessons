@@ -8,15 +8,17 @@ public class Menus {
 		// variables
 		Scanner sc = new Scanner(System.in);
 		int menuChoice = 0;
-		final int EXIT_CHOICE = 4;
+		final int EXIT_CHOICE = 4;		
 		double balance = 0;
+		double deposit = 0;
+		double withdraw = 0;
 		
 		while(menuChoice != 4)  {
 			
 			System.out.println("1. Deposit");
 			System.out.println("2. Withdraw");
 			System.out.println("3. Balance");
-			System.out.println("4. Return Card");
+			System.out.println("4. Return Card\n");
 			System.out.println("Enter choice: ");
 			menuChoice = sc.nextInt();
 			
@@ -26,10 +28,30 @@ public class Menus {
 				balanceMethod(balance);
 			}
 			
+			else if (menuChoice == 1)  {
+				
+				deposit = 0;
+				
+				// ask user for amount of money to deposit 
+				System.out.println("Enter amount to deposit: ");
+				deposit = sc.nextDouble();
+				
+				balance = depositMethod(deposit, balance);
+			}
+			
+			else if (menuChoice == 2)  {
+				
+				// ask user for amount of money to withdraw
+				System.out.println("Enter amount to withdraw: ");
+				withdraw = sc.nextDouble();
+				
+				balance = withdrawMethod(withdraw, balance);
+				
+			}
+			
 		}
 
 	}
-	
 	
 	
 	// DESCRIPTION - Displays balance to user.
@@ -37,23 +59,28 @@ public class Menus {
 	// RETURN  - void
 	public static void balanceMethod(double a)  {
 		
-		System.out.println("Balance: " + a);
+		System.out.println("Balance: " + a + "\n\n");
 	}
 	
 	
-	
-	
 	// DESCRIPTION - Deposits money to balance.
-	// PARAMETERS - 
-	// RETURN  - 
+	// PARAMETERS - double a, double b
+	// RETURN  - double
+	public static double depositMethod(double a, double b)  {
+		
+		b = a + b;
+		return b;
+	}
 	
 	
-	
-	
-	
-	// DESCRIPTION - Withdraws money from balance.
-	// PARAMETERS - 
-	// RETURN  - 
+	// DESCRIPTION - Withdraws money to balance.
+	// PARAMETERS - double a, double b
+	// RETURN  - double
+	public static double withdrawMethod(double a, double b)  {
+		
+		b = b - a;
+		return b;
+	}
 	
 	
 
