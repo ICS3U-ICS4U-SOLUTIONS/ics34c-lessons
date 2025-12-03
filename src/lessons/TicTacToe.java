@@ -21,16 +21,10 @@ public class TicTacToe {
 	ImageIcon x = new ImageIcon(getClass().getResource("/resources/x.png"));
 	ImageIcon o = new ImageIcon(getClass().getResource("/resources/o.png"));
 	ImageIcon blank = new ImageIcon(getClass().getResource("/resources/blank.png"));
-	JButton[] buttons = new JButton[9];
-	
-	
-	
-	String[] gameBoard = new String[9];
-//	int[] gameBoard = new int[9];
-	// 1 = x, 0 = o
-	
-	
-	
+	JButton[] buttons = new JButton[9];  // to hold all the buttons
+	int[] gameBoard = new int[9];  // Gameboard is used to track x's and o's (1=x, 0=o)
+
+
 	/**
 	 * Launch the application.
 	 */
@@ -68,7 +62,7 @@ public class TicTacToe {
 		titleLabel.setBounds(115, 34, 228, 35);
 		frame.getContentPane().add(titleLabel);
 		
-		JButton zeroButton = new JButton("New button");
+		JButton zeroButton = new JButton("");
 		zeroButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -76,39 +70,67 @@ public class TicTacToe {
 		zeroButton.setBounds(47, 74, 90, 90);
 		frame.getContentPane().add(zeroButton);
 		
-		JButton oneButton = new JButton("New button");
+		JButton oneButton = new JButton("");
 		oneButton.setBounds(168, 74, 90, 90);
 		frame.getContentPane().add(oneButton);
 		
-		JButton twoButton = new JButton("New button");
+		JButton twoButton = new JButton("");
 		twoButton.setBounds(290, 74, 90, 90);
 		frame.getContentPane().add(twoButton);
 		
-		JButton threeButton = new JButton("New button");
+		JButton threeButton = new JButton("");
 		threeButton.setBounds(47, 186, 90, 90);
 		frame.getContentPane().add(threeButton);
 		
-		JButton fourButton = new JButton("New button");
+		JButton fourButton = new JButton("");
 		fourButton.setBounds(168, 186, 90, 90);
 		frame.getContentPane().add(fourButton);
 		
-		JButton fiveButton = new JButton("New button");
+		JButton fiveButton = new JButton("");
 		fiveButton.setBounds(290, 186, 90, 90);
 		frame.getContentPane().add(fiveButton);
 		
-		JButton sixButton = new JButton("New button");
+		JButton sixButton = new JButton("");
 		sixButton.setBounds(47, 295, 90, 90);
 		frame.getContentPane().add(sixButton);
 		
-		JButton sevenButton = new JButton("New button");
+		JButton sevenButton = new JButton("");
 		sevenButton.setBounds(168, 295, 90, 90);
 		frame.getContentPane().add(sevenButton);
 		
-		JButton eightButton = new JButton("New button");
+		JButton eightButton = new JButton("");
 		eightButton.setBounds(290, 295, 90, 90);
 		frame.getContentPane().add(eightButton);
 		
 		JButton xButton = new JButton("X");
+		xButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				// button code starts here
+				
+				// put all buttons into an array			
+				buttons[0] = zeroButton;
+				buttons[1] = oneButton;
+				buttons[2] = twoButton;
+				buttons[3] = threeButton;
+				buttons[4] = fourButton;
+				buttons[5] = fiveButton;
+				buttons[6] = sixButton;
+				buttons[7] = sevenButton;
+				buttons[8] = eightButton;
+			
+				// display blank images on all buttons
+				for (int i=0; i<buttons.length; i++)  {
+					
+					buttons[i].setIcon(blank);
+				}
+				
+				
+				
+				
+				// button code ends here
+			}
+		});
 		xButton.setFont(new Font("Tahoma", Font.BOLD, 11));
 		xButton.setBounds(94, 413, 43, 35);
 		frame.getContentPane().add(xButton);
@@ -119,6 +141,15 @@ public class TicTacToe {
 		frame.getContentPane().add(oButton);
 		
 		JButton exitButton = new JButton("Exit");
+		exitButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				// exit button code starts here
+				
+				System.exit(0);
+				// exit button code ends here
+			}
+		});
 		exitButton.setBounds(271, 419, 89, 23);
 		frame.getContentPane().add(exitButton);
 		
