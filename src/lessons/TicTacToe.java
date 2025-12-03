@@ -109,7 +109,7 @@ public class TicTacToe {
 				// button code starts here
 				
 				// put all buttons into an array			
-				buttons[0] = zeroButton;
+				buttons[0] = zeroButton; 
 				buttons[1] = oneButton;
 				buttons[2] = twoButton;
 				buttons[3] = threeButton;
