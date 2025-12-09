@@ -23,8 +23,11 @@ public class TicTacToe {
 	ImageIcon blank = new ImageIcon(getClass().getResource("/resources/blank.png"));
 	JButton[] buttons = new JButton[9];  // to hold all the buttons
 	int[] gameBoard = new int[9];  // Gameboard is used to track x's and o's (0 = no pick, 1=x, 2=o)
-
-
+	boolean xTurn = false;
+	boolean oTurn = false;
+	boolean gameOver = false;
+	
+	
 	/**
 	 * Launch the application.
 	 */
@@ -107,6 +110,10 @@ public class TicTacToe {
 			public void actionPerformed(ActionEvent e) {
 				
 				// button code starts here
+				
+				xTurn = true;
+				oTurn = false;
+				gameOver = false;
 				
 				// put all buttons into an array			
 				buttons[0] = zeroButton; 
