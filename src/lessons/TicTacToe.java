@@ -76,11 +76,15 @@ public class TicTacToe {
 				
 				// button code starts here
 				
-				// check if game is over or if gameBoard for square hasn't been picked
-				if (gameOver == true || gameBoard[0] == 0)  {
+				// check if game is over
+				if (gameOver == true)  {
 					
 					return;   // kicks out of method, nothing will happen
 				}
+				
+				// check if button has been picked already
+				
+				
 				
 				
 				// x's turn
@@ -100,7 +104,7 @@ public class TicTacToe {
 				}
 				
 				// o's turn
-				else  {
+				else if (oTurn ==  true)  {
 					
 					// display o on square
 					buttons[0].setIcon(o);
@@ -116,10 +120,6 @@ public class TicTacToe {
 				}
 				
 				// checkForWinner();
-				
-				
-				
-				
 				
 				// button code ends here
 			}
