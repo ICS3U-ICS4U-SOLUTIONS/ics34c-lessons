@@ -18,15 +18,20 @@ public class TicTacToe {
 
 	// variables
 	private JFrame frame;
+	
+	// 3 images used for game
 	ImageIcon x = new ImageIcon(getClass().getResource("/resources/x.png"));
 	ImageIcon o = new ImageIcon(getClass().getResource("/resources/o.png"));
 	ImageIcon blank = new ImageIcon(getClass().getResource("/resources/blank.png"));
+
+	// 2 arrays
 	JButton[] buttons = new JButton[9];  // to hold all the buttons
 	int[] gameBoard = new int[9];  // Gameboard is used to track x's and o's (0 = no pick, 1=x, 2=o)
+	
+	// 3 booleans
 	boolean xTurn = false;
 	boolean oTurn = false;
 	boolean gameOver = false;
-	
 	
 	/**
 	 * Launch the application.
@@ -68,6 +73,55 @@ public class TicTacToe {
 		JButton zeroButton = new JButton("");
 		zeroButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				// button code starts here
+				
+				// check if game is over or if gameBoard for square hasn't been picked
+				if (gameOver == true || gameBoard[0] == 0)  {
+					
+					return;   // kicks out of method, nothing will happen
+				}
+				
+				
+				// x's turn
+				if (xTurn == true)  {
+					
+					// display x on square
+					buttons[0].setIcon(x);
+					
+					// keep track of game on gameBoard
+					gameBoard[0] = 1;
+					
+					// set xTurn to false
+					xTurn = false;
+					
+					// set oTurn to true
+					oTurn = true;
+				}
+				
+				// o's turn
+				else  {
+					
+					// display o on square
+					buttons[0].setIcon(o);
+					
+					// keep track of game on gameBoard
+					gameBoard[0] = 2;
+					
+					// set xTurn to true
+					xTurn = true;
+					
+					// set oTurn to false
+					oTurn = false;
+				}
+				
+				// checkForWinner();
+				
+				
+				
+				
+				
+				// button code ends here
 			}
 		});
 		zeroButton.setBounds(47, 74, 90, 90);
@@ -110,7 +164,6 @@ public class TicTacToe {
 			public void actionPerformed(ActionEvent e) {
 				
 				// button code starts here
-				
 				xTurn = true;
 				oTurn = false;
 				gameOver = false;
@@ -132,6 +185,12 @@ public class TicTacToe {
 					buttons[i].setIcon(blank);
 				}
 				
+				// set gameBoard to all zero's
+				for(int i=0; i<gameBoard.length; i++)  {
+				
+					gameBoard[i] = 0;
+				}
+				
 				
 				// button code ends here
 			}
@@ -141,6 +200,41 @@ public class TicTacToe {
 		frame.getContentPane().add(xButton);
 		
 		JButton oButton = new JButton("O");
+		oButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				// button code starts here
+				xTurn = false;
+				oTurn = true;
+				gameOver = false;
+				
+				// put all buttons into an array			
+				buttons[0] = zeroButton; 
+				buttons[1] = oneButton;
+				buttons[2] = twoButton;
+				buttons[3] = threeButton;
+				buttons[4] = fourButton;
+				buttons[5] = fiveButton;
+				buttons[6] = sixButton;
+				buttons[7] = sevenButton;
+				buttons[8] = eightButton;
+			
+				// display blank images on all buttons
+				for (int i=0; i<buttons.length; i++)  {
+					
+					buttons[i].setIcon(blank);
+				}
+				
+				// set gameBoard to all zero's
+				for(int i=0; i<gameBoard.length; i++)  {
+				
+					gameBoard[i] = 0;
+				}
+				
+				// button code ends here
+				
+			}
+		});
 		oButton.setFont(new Font("Tahoma", Font.BOLD, 11));
 		oButton.setBounds(179, 413, 43, 35);
 		frame.getContentPane().add(oButton);
@@ -163,4 +257,6 @@ public class TicTacToe {
 		infoLabel.setBounds(116, 473, 227, 23);
 		frame.getContentPane().add(infoLabel);
 	}
+		
+	
 }
