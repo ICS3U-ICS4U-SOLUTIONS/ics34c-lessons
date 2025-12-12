@@ -159,6 +159,17 @@ public class TicTacToe {
 		eightButton.setBounds(290, 295, 90, 90);
 		frame.getContentPane().add(eightButton);
 		
+		// put all buttons into an array			
+		buttons[0] = zeroButton; 
+		buttons[1] = oneButton;
+		buttons[2] = twoButton;
+		buttons[3] = threeButton;
+		buttons[4] = fourButton;
+		buttons[5] = fiveButton;
+		buttons[6] = sixButton;
+		buttons[7] = sevenButton;
+		buttons[8] = eightButton;
+		
 		JButton xButton = new JButton("X");
 		xButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -166,32 +177,7 @@ public class TicTacToe {
 				// button code starts here
 				xTurn = true;
 				oTurn = false;
-				gameOver = false;
-				
-				// put all buttons into an array			
-				buttons[0] = zeroButton; 
-				buttons[1] = oneButton;
-				buttons[2] = twoButton;
-				buttons[3] = threeButton;
-				buttons[4] = fourButton;
-				buttons[5] = fiveButton;
-				buttons[6] = sixButton;
-				buttons[7] = sevenButton;
-				buttons[8] = eightButton;
-			
-				// display blank images on all buttons
-				for (int i=0; i<buttons.length; i++)  {
-					
-					buttons[i].setIcon(blank);
-				}
-				
-				// set gameBoard to all zero's
-				for(int i=0; i<gameBoard.length; i++)  {
-				
-					gameBoard[i] = 0;
-				}
-				
-				
+				initializeGame();
 				// button code ends here
 			}
 		});
@@ -206,31 +192,7 @@ public class TicTacToe {
 				// button code starts here
 				xTurn = false;
 				oTurn = true;
-				gameOver = false;
-				
-				// put all buttons into an array			
-				buttons[0] = zeroButton; 
-				buttons[1] = oneButton;
-				buttons[2] = twoButton;
-				buttons[3] = threeButton;
-				buttons[4] = fourButton;
-				buttons[5] = fiveButton;
-				buttons[6] = sixButton;
-				buttons[7] = sevenButton;
-				buttons[8] = eightButton;
-			
-				// display blank images on all buttons
-				for (int i=0; i<buttons.length; i++)  {
-					
-					buttons[i].setIcon(blank);
-				}
-				
-				// set gameBoard to all zero's
-				for(int i=0; i<gameBoard.length; i++)  {
-				
-					gameBoard[i] = 0;
-				}
-				
+				initializeGame();	
 				// button code ends here
 				
 			}
@@ -257,6 +219,22 @@ public class TicTacToe {
 		infoLabel.setBounds(116, 473, 227, 23);
 		frame.getContentPane().add(infoLabel);
 	}
+	
+	public void initializeGame()  {
 		
+		gameOver = false;
+		
+		// display blank images on all buttons
+		for (int i=0; i<buttons.length; i++)  {
+			
+			buttons[i].setIcon(blank);
+		}
+		
+		// set gameBoard to all zero's
+		for(int i=0; i<gameBoard.length; i++)  {
+		
+			gameBoard[i] = 0;
+		}
+	}
 	
 }
