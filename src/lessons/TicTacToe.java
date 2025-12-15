@@ -74,54 +74,7 @@ public class TicTacToe {
 		zeroButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				// button code starts here
-				
-				// check if game is over
-				if (gameOver == true)  {
-					
-					return;   // kicks out of method, nothing will happen
-				}
-				
-				// check if button has been picked already
-				
-				
-				
-				
-				// x's turn
-				if (xTurn == true)  {
-					
-					// display x on square
-					buttons[0].setIcon(x);
-					
-					// keep track of game on gameBoard
-					gameBoard[0] = 1;
-					
-					// set xTurn to false
-					xTurn = false;
-					
-					// set oTurn to true
-					oTurn = true;
-				}
-				
-				// o's turn
-				else if (oTurn ==  true)  {
-					
-					// display o on square
-					buttons[0].setIcon(o);
-					
-					// keep track of game on gameBoard
-					gameBoard[0] = 2;
-					
-					// set xTurn to true
-					xTurn = true;
-					
-					// set oTurn to false
-					oTurn = false;
-				}
-				
-				// checkForWinner();
-				
-				// button code ends here
+				buttonCode();
 			}
 		});
 		zeroButton.setBounds(47, 74, 90, 90);
@@ -236,5 +189,6 @@ public class TicTacToe {
 			gameBoard[i] = 0;
 		}
 	}
+	
 	
 }
