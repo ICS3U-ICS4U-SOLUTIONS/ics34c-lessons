@@ -33,6 +33,10 @@ public class TicTacToe {
 	boolean oTurn = false;
 	boolean gameOver = false;
 	
+	// make the infoLabel visible through any method (without having to pass as argument)
+	// this was moved from the initialize method without any changes
+	JLabel infoLabel = new JLabel("First player picks X or O to start/reset.");
+	
 	/**
 	 * Launch the application.
 	 */
@@ -215,7 +219,6 @@ public class TicTacToe {
 		exitButton.setBounds(271, 419, 89, 23);
 		frame.getContentPane().add(exitButton);
 		
-		JLabel infoLabel = new JLabel("First player picks X or O to start/reset.");
 		infoLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
 		infoLabel.setBounds(116, 473, 227, 23);
 		frame.getContentPane().add(infoLabel);
