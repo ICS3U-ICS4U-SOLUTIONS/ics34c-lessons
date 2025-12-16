@@ -91,30 +91,72 @@ public class TicTacToe {
 		frame.getContentPane().add(oneButton);
 		
 		JButton twoButton = new JButton("");
+		twoButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				buttonCode(2);
+			}
+		});
 		twoButton.setBounds(290, 74, 90, 90);
 		frame.getContentPane().add(twoButton);
 		
 		JButton threeButton = new JButton("");
+		threeButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				buttonCode(3);
+			}
+		});
 		threeButton.setBounds(47, 186, 90, 90);
 		frame.getContentPane().add(threeButton);
 		
 		JButton fourButton = new JButton("");
+		fourButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				buttonCode(4);
+			}
+		});
 		fourButton.setBounds(168, 186, 90, 90);
 		frame.getContentPane().add(fourButton);
 		
 		JButton fiveButton = new JButton("");
+		fiveButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				buttonCode(5);
+			}
+		});
 		fiveButton.setBounds(290, 186, 90, 90);
 		frame.getContentPane().add(fiveButton);
 		
 		JButton sixButton = new JButton("");
+		sixButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				buttonCode(6);
+			}
+		});
 		sixButton.setBounds(47, 295, 90, 90);
 		frame.getContentPane().add(sixButton);
 		
 		JButton sevenButton = new JButton("");
+		sevenButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				buttonCode(7);
+			}
+		});
 		sevenButton.setBounds(168, 295, 90, 90);
 		frame.getContentPane().add(sevenButton);
 		
 		JButton eightButton = new JButton("");
+		eightButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				buttonCode(8);
+			}
+		});
 		eightButton.setBounds(290, 295, 90, 90);
 		frame.getContentPane().add(eightButton);
 		
