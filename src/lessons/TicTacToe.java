@@ -288,8 +288,34 @@ public class TicTacToe {
 			oTurn = false;
 		}
 		
-		// checkForWinner();
+		checkForWinner();
 		
 	}
+	
+	
+	public void checkForWinner()  {
+	
+		
+		// check if X won with top row
+		if ( gameBoard[0] == 1 && gameBoard[1] == 1 && gameBoard[2] == 1)  {
+			
+			gameOver = true;
+			infoLabel.setText("X is the winner");
+		}
+		
+		// check if O won
+		if ( false )  {
+			
+			
+			gameOver = true;
+			infoLabel.setText("O is the winner");
+		}
+		
+		// check if tie game
+		
+		
+		
+	}
+	
 	
 }
