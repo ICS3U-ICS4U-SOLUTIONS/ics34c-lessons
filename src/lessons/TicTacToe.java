@@ -74,13 +74,19 @@ public class TicTacToe {
 		zeroButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				buttonCode();
+				buttonCode(0);
 			}
 		});
 		zeroButton.setBounds(47, 74, 90, 90);
 		frame.getContentPane().add(zeroButton);
 		
 		JButton oneButton = new JButton("");
+		oneButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				buttonCode(1); 
+			}
+		});
 		oneButton.setBounds(168, 74, 90, 90);
 		frame.getContentPane().add(oneButton);
 		
@@ -190,5 +196,55 @@ public class TicTacToe {
 		}
 	}
 	
+	// this method is used by every button
+	public void buttonCode(int square)  {
+		
+		// check if game is over
+		if (gameOver == true)  {
+			
+			return;   // kicks out of method, nothing will happen
+		}
+		
+		// check if button has been picked already
+		if (gameBoard[square] != 0)  {
+			
+			return;
+		}
+		
+		// x's turn
+		if (xTurn == true)  {
+			
+			// display x on square
+			buttons[square].setIcon(x);
+			
+			// keep track of game on gameBoard
+			gameBoard[square] = 1;
+			
+			// set xTurn to false
+			xTurn = false;
+			
+			// set oTurn to true
+			oTurn = true;
+		}
+		
+		// o's turn
+		else if (oTurn ==  true)  {
+			
+			// display o on square
+			buttons[square].setIcon(o);
+			
+			// keep track of game on gameBoard
+			gameBoard[square] = 2;
+			
+			// set xTurn to true
+			xTurn = true;
+			
+			// set oTurn to false
+			oTurn = false;
+		}
+		
+		// checkForWinner();
+		
+	}
 	
 }
