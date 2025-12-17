@@ -295,23 +295,25 @@ public class TicTacToe {
 	
 	public void checkForWinner()  {
 	
+		// There are 8 possible scenerios for X to be the winner and another 8
+		// possible scenerios for O to be the winner.  There is also the case
+		// of a tie game to consider.
 		
 		// check if X won with top row
-		if ( gameBoard[0] == 1 && gameBoard[1] == 1 && gameBoard[2] == 1)  {
+		if ( gameBoard[0] == 1 && gameBoard[1] == 1 && gameBoard[2] == 1 )  {
 			
 			gameOver = true;
 			infoLabel.setText("X is the winner");
 		}
 		
-		// check if O won
-		if ( false )  {
-			
+		// check if O won with top row
+		if ( gameBoard[0] == 2 && gameBoard[1] == 2 && gameBoard[2] == 2 )  {
 			
 			gameOver = true;
 			infoLabel.setText("O is the winner");
 		}
 		
-		// check if tie game
+		// check if tie game (write your own code to check for tie game)
 		
 		
 		
