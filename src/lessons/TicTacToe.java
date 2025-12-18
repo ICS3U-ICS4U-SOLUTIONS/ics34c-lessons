@@ -292,7 +292,9 @@ public class TicTacToe {
 		
 	}
 	
-	
+	// This method is used every time buttonCode() method is used.
+	// Although we could include this code in the buttonCode() method,
+	// we use a separate method to simplify and separate the tasks.
 	public void checkForWinner()  {
 	
 		// There are 8 possible scenerios for X to be the winner and another 8
