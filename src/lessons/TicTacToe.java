@@ -24,6 +24,15 @@ public class TicTacToe {
 	// array to hold all buttons
 	JButton[] buttons = new JButton[9];
 	
+	
+	/*
+	 * 	array to hold gameBoard
+	 * 	blank = 0
+	 * 	X = 1
+	 * 	O = 2
+	 */
+	int[] gameBoard = {0, 0, 0, 0, 0, 0, 0, 0, 0};
+	
 	// trackers
 	boolean xTurn = false;
 	boolean oTurn = false;
@@ -108,6 +117,18 @@ public class TicTacToe {
 		buttonNine.setBounds(278, 275, 90, 90);
 		frame.getContentPane().add(buttonNine);
 		
+		// put all buttons into array, this must be done here,
+		// after buttons have been generated
+		buttons[0] = buttonOne;
+		buttons[1] = buttonTwo;
+		buttons[2] = buttonThree;
+		buttons[3] = buttonFour;
+		buttons[4] = buttonFive;
+		buttons[5] = buttonSix;
+		buttons[6] = buttonSeven;
+		buttons[7] = buttonEight;
+		buttons[8] = buttonNine;
+		
 		JButton xButton = new JButton("X");
 		xButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -115,6 +136,7 @@ public class TicTacToe {
 				// button code starts here
 				xTurn = true;
 				oTurn = false;
+				displayBlanks();
 				
 				// button code ends here
 			}
@@ -129,6 +151,7 @@ public class TicTacToe {
 				// button code starts here
 				xTurn = false;
 				oTurn = true;
+				displayBlanks();
 				
 				// button code ends here
 			}
@@ -153,4 +176,15 @@ public class TicTacToe {
 		lblNewLabel_1.setBounds(88, 426, 284, 28);
 		frame.getContentPane().add(lblNewLabel_1);
 	}
+	
+	// this method displays blank images to all buttons
+	// used when the "X" or "O" button is pressed
+	public void displayBlanks()  {
+		
+		
+		buttons[0].setIcon(blank);
+
+	}
+	
+	
 }
