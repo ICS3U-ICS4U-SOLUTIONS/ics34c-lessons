@@ -274,7 +274,9 @@ public class TicTacToe {
 			System.out.print(gameBoard[i] + " ");
 		}
 		
-		System.out.println();
+		System.out.println("xTurn = " + xTurn);
+		System.out.println("oTurn = " + oTurn);
+		System.out.println("gameOver = " + gameOver);
 	}
 	
 	
