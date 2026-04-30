@@ -80,40 +80,108 @@ public class TicTacToe {
 		JButton buttonOne = new JButton("");
 		buttonOne.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				// button code starts here
+				buttonCode(0);
+				// button code ends here
 			}
 		});
 		buttonOne.setBounds(66, 73, 90, 90);
 		frame.getContentPane().add(buttonOne);
 		
 		JButton buttonTwo = new JButton("");
+		buttonTwo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				// button code starts here
+				buttonCode(1);
+				// button code ends here
+			}
+		});
 		buttonTwo.setBounds(172, 73, 90, 90);
 		frame.getContentPane().add(buttonTwo);
 		
 		JButton buttonThree = new JButton("");
+		buttonThree.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				// button code starts here
+				buttonCode(2);
+				// button code ends here
+			}
+		});
 		buttonThree.setBounds(278, 73, 90, 90);
 		frame.getContentPane().add(buttonThree);
 		
 		JButton buttonFour = new JButton("");
+		buttonFour.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				// button code starts here
+				buttonCode(3);
+				// button code ends here
+			}
+		});
 		buttonFour.setBounds(66, 174, 90, 90);
 		frame.getContentPane().add(buttonFour);
 		
 		JButton buttonFive = new JButton("");
+		buttonFive.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				// button code starts here
+				buttonCode(4);
+				// button code ends here
+			}
+		});
 		buttonFive.setBounds(172, 174, 90, 90);
 		frame.getContentPane().add(buttonFive);
 		
 		JButton buttonSix = new JButton("");
+		buttonSix.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				// button code starts here
+				buttonCode(5);
+				// button code ends here
+			}
+		});
 		buttonSix.setBounds(278, 174, 90, 90);
 		frame.getContentPane().add(buttonSix);
 		
 		JButton buttonSeven = new JButton("");
+		buttonSeven.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				// button code starts here
+				buttonCode(6);
+				// button code ends here
+			}
+		});
 		buttonSeven.setBounds(66, 275, 90, 90);
 		frame.getContentPane().add(buttonSeven);
 		
 		JButton buttonEight = new JButton("");
+		buttonEight.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				// button code starts here
+				buttonCode(7);
+				// button code ends here
+			}
+		});
 		buttonEight.setBounds(172, 275, 90, 90);
 		frame.getContentPane().add(buttonEight);
 		
 		JButton buttonNine = new JButton("");
+		buttonNine.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				// button code starts here
+				buttonCode(8);
+				// button code ends here
+			}
+		});
 		buttonNine.setBounds(278, 275, 90, 90);
 		frame.getContentPane().add(buttonNine);
 		
@@ -137,7 +205,8 @@ public class TicTacToe {
 				xTurn = true;
 				oTurn = false;
 				displayBlanks();
-				
+				resetGameBoard();
+				printGameBoard();
 				// button code ends here
 			}
 		});
@@ -152,7 +221,8 @@ public class TicTacToe {
 				xTurn = false;
 				oTurn = true;
 				displayBlanks();
-				
+				resetGameBoard();
+				printGameBoard();
 				// button code ends here
 			}
 		});
@@ -181,10 +251,37 @@ public class TicTacToe {
 	// used when the "X" or "O" button is pressed
 	public void displayBlanks()  {
 		
-		
-		buttons[0].setIcon(blank);
-
+		for(int i=0; i<buttons.length; i++)  {
+			
+			buttons[i].setIcon(blank);
+		}
 	}
 	
+	// this method sets gameBoard to all 0's
+	public void resetGameBoard()  {
+		
+		gameBoard[0] = 0;	
+	}
+	
+	
+	// prints gameBoard so we can see it
+	public void printGameBoard()  {
+	
+		System.out.print("GAMEBOARD: ");
+		
+		for(int i=0; i<gameBoard.length; i++)  {
+			
+			System.out.print(gameBoard[i] + " ");
+		}
+		
+		System.out.println();
+	}
+	
+	
+	// code for all buttons
+	public void buttonCode(int n)  {
+		
+		System.out.println("Button " + n + " code activated ...");
+	}
 	
 }
