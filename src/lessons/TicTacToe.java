@@ -33,6 +33,7 @@ public class TicTacToe {
 	 */
 	int[] gameBoard = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 	
+	
 	// trackers
 	boolean xTurn = false;
 	boolean oTurn = false;
@@ -204,6 +205,7 @@ public class TicTacToe {
 				// button code starts here
 				xTurn = true;
 				oTurn = false;
+				gameOver = true;
 				displayBlanks();
 				resetGameBoard();
 				printGameBoard();
@@ -220,6 +222,7 @@ public class TicTacToe {
 				// button code starts here
 				xTurn = false;
 				oTurn = true;
+				gameOver = true;
 				displayBlanks();
 				resetGameBoard();
 				printGameBoard();
@@ -285,6 +288,34 @@ public class TicTacToe {
 	public void buttonCode(int n)  {
 		
 		System.out.println("Button " + n + " code activated ...");
+		
+		// Check if game is over.  Do nothing if game is over.
+		if (gameOver == false)  {
+			
+			System.out.println("Game is over, do nothing.");
+			return;  // this kicks out of method, no other code executed
+		}
+		
+		// Check if square has already been picked.  If picked, do nothing.
+		if (gameBoard[n] != 0)  {
+			
+			System.out.println("Square already picked, do nothing.");
+			return;  // this kicks out of method, no other code executed
+		}
+		
+		// Check if X's or O's turn
+		if (             )  {
+			
+			System.out.println("It's X's turn.");
+		}
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 	
 }
