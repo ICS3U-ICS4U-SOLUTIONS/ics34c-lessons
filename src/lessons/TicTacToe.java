@@ -303,13 +303,34 @@ public class TicTacToe {
 			return;  // this kicks out of method, no other code executed
 		}
 		
-		// Check if X's or O's turn
-		if (             )  {
+		// Check if X's turn
+		if (xTurn == true)  {
 			
-			System.out.println("It's X's turn.");
+			// display X
+			buttons[n].setIcon(x);
+			
+			// update gameBoard
+			gameBoard[n] = 1;
+			
+			// change the trackers
+			xTurn = false;
+			oTurn = true;
 		}
 		
-		
+		// Check if O's turn
+		if (oTurn == true)  {
+			
+			// display O
+			buttons[n].setIcon(o);
+
+			// update gameBoard
+			gameBoard[n] = 2;
+			
+			//change the trackers
+			xTurn = true;
+			oTurn = false;
+			
+		}
 		
 		
 		
