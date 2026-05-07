@@ -15,6 +15,7 @@ import java.awt.event.ActionEvent;
 public class TicTacToe {
 
 	// variables
+	JLabel infoLabel = new JLabel("First player picks X or O to start/reset.");
 	
 	// 3 images used for game
 	ImageIcon x = new ImageIcon(getClass().getResource("/resources/x.png"));
@@ -205,7 +206,7 @@ public class TicTacToe {
 				// button code starts here
 				xTurn = true;
 				oTurn = false;
-				gameOver = true;
+				gameOver = false;
 				displayBlanks();
 				resetGameBoard();
 				printGameBoard();
@@ -222,7 +223,7 @@ public class TicTacToe {
 				// button code starts here
 				xTurn = false;
 				oTurn = true;
-				gameOver = true;
+				gameOver = false;
 				displayBlanks();
 				resetGameBoard();
 				printGameBoard();
@@ -244,10 +245,10 @@ public class TicTacToe {
 		exitButton.setBounds(279, 392, 89, 23);
 		frame.getContentPane().add(exitButton);
 		
-		JLabel lblNewLabel_1 = new JLabel("First player picks X or O to start/reset.");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblNewLabel_1.setBounds(88, 426, 284, 28);
-		frame.getContentPane().add(lblNewLabel_1);
+		
+		infoLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+		infoLabel.setBounds(88, 426, 284, 28);
+		frame.getContentPane().add(infoLabel);
 	}
 	
 	// this method displays blank images to all buttons
@@ -263,7 +264,10 @@ public class TicTacToe {
 	// this method sets gameBoard to all 0's
 	public void resetGameBoard()  {
 		
-		gameBoard[0] = 0;	
+		for(int i=0; i<gameBoard.length; i++)  {
+			
+			gameBoard[i] = 0;
+		}
 	}
 	
 	
@@ -290,7 +294,7 @@ public class TicTacToe {
 		System.out.println("Button " + n + " code activated ...");
 		
 		// Check if game is over.  Do nothing if game is over.
-		if (gameOver == false)  {
+		if (gameOver == true)  {
 			
 			System.out.println("Game is over, do nothing.");
 			return;  // this kicks out of method, no other code executed
@@ -318,7 +322,7 @@ public class TicTacToe {
 		}
 		
 		// Check if O's turn
-		if (oTurn == true)  {
+		else if (oTurn == true)  {
 			
 			// display O
 			buttons[n].setIcon(o);
@@ -329,11 +333,23 @@ public class TicTacToe {
 			//change the trackers
 			xTurn = true;
 			oTurn = false;
-			
 		}
 		
+		printGameBoard();
+
+		checkForWinner();
 		
+	}
+	
+	// This method checks for winner
+	public void checkForWinner()  {
 		
+		// check if X won with top row only
+		if (gameBoard[0] == 1 && gameBoard[1] == 1  && gameBoard[2] == 1 )  {
+			
+			infoLabel.setText("X is the winner!");
+			gameOver = true;
+		}
 		
 		
 		
