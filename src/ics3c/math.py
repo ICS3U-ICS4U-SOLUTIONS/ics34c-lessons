@@ -1,18 +1,32 @@
 import math
 import random
 
-print(math.gcd(6, 18))
+# multiply
+print(2 * 2)
 
-print(math.ceil(4.4))
-
-print(math.floor(3.3))
-
-print(2 ** 3)
-
+# decimal division
 print(5 / 2)
 
+# integer division
 print(5 // 2)
 
+# exponent
+print(2 ** 2)
+
+# greatest common denominator
+print(math.gcd(15, 5))
+
+# rounds up
+print(math.ceil(4.2))
+
+# rounds down
+print(math.floor(3.2))
+
+# prints random decimal less than 1
 print(random.random())
 
-print(random.randint(1, 5))
+# prints random integer within given range
+print(random.randint(1, 3))
+
+# % returns the remainder of a division
+print(7%4)
