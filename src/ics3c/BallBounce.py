@@ -6,8 +6,6 @@ from pygame import Color
 from pygame import draw
 from pygame import display
 from pygame import time
-from _pyrepl.readline import get_begidx
-from ctypes.macholib.dyld import dyld_default_search
 
 # Constants
 SCREEN_WIDTH = 600
@@ -30,6 +28,36 @@ clock = time.Clock()
 gameDisplay = display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
 while True:
+    
+    # get current event
+    for evt in pygame.event.get():
+        
+        # Does user want to quit?  (red "x" button on upper right)
+        if evt.type == pygame.QUIT:
+            quit()
+    
+        # make ball respond to keyboard input
+        if evt.type == pygame.KEYDOWN:
+            
+            if evt.key == pygame.K_DOWN:
+                dy = random.randint(2, 4)
+
+            elif evt.key == pygame.K_UP:
+                dy = -random.randint(2, 4)
+    
+            elif evt.key == pygame.K_LEFT:
+                dx = -random.randint(2, 4)
+
+            elif evt.key == pygame.K_RIGHT:
+                dx = random.randint(2, 4)
+
+   
+    
+    
+    
+    
+    
+    
     
     # white background
     gameDisplay.fill(Color('white'))
